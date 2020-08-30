@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
 
     var reportEmbed = new discord.MessageEmbed()
         .setTitle("Hallo " + message.author.username)
-        .setFooter(`${message.author} kijk in intake kanaal om te alles in te vullen!`);
+        .setFooter("Kijk in intake kanaal om te alles in te vullen!");
 
     message.channel.send(reportEmbed);
 
