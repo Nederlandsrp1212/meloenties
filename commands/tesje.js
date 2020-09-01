@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    var intakeRole = message.guild.roles.cache.get('743838009224593449');
+    var intakeRole = message.guild.roles.cache.get('749989325122437130');
     if (!intakeRole) return message.channel.send("De rol muted bestaat niet!");
     
     await (intakePerson.roles.add(intakeRole.id));
