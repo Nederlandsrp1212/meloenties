@@ -2,26 +2,26 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    const categoryID = "751092611401515058";
+    const categoryID = "751107506654281819";
 
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
 
-    var sollicitatieBestaat = false;
+    var politieBestaat = false;
 
     message.guild.channels.cache.forEach(channel => {
 
         if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
-            sollicitatieBestaat = true;
+            politieBestaat = true;
 
-            message.reply("Je hebt al een sollicitatie openstaan!");
+            message.reply("Je hebt al een politie sollicitatie openstaan");
 
             return;
         }
 
     });
 
-    if (sollicitatieBestaat) return;
+    if (politieBestaat) return;
 
     var reportEmbed = new discord.MessageEmbed()
         .setTitle("Hallo " + message.author.username)
@@ -63,6 +63,42 @@ module.exports.run = async (client, message, args) => {
 
                     });
 
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'KorpsChef⭐⭐⭐'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+                    
+                    });
+                    
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'Korpsleiding⭐⭐'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+                    
+                    });
+                    
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'Hoofd-Commissaris⭐'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+                    
+                    });
+
                     var embedParent = new discord.MessageEmbed()
                         .setTitle(`Hallo ${message.author.username}`)
                         .setDescription("\nWIl je solliciteren voor politie doe dan !politie\nWil je voor ambulance doe dan !ambulance\nWil je voor anwb doe dan !anwb\n\n**Disclaimer**\n*Neem je ontslag of ben je ontslagen? Dan moet je één week wachten voordat je bij een andere whitelisted job kan solliciteren.*");
@@ -79,5 +115,5 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "sollicitatie"
+    name: "politie"
 }
