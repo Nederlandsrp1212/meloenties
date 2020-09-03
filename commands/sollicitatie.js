@@ -7,12 +7,12 @@ module.exports.run = async (client, message, args) => {
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
 
-    var reportBestaat = false;
+    var sollicitatieBestaat = false;
 
     message.guild.channels.cache.forEach(channel => {
 
         if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
-            reportBestaat = true;
+            sollicitatieBestaat = true;
 
             message.reply("Je hebt al een Sollicitatie openstaan");
 
@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
 
     });
 
-    if (reportBestaat) return;
+    if (sollicitatieBestaat) return;
 
     var reportEmbed = new discord.MessageEmbed()
         .setTitle("Hallo " + message.author.username)
