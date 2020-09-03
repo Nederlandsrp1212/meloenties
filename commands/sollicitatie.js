@@ -2,30 +2,30 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    const categoryID = "751092611401515058";
+    const categoryID = "749591852361187398";
 
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
 
-    var sollicitatieBestaat = false;
+    var reportBestaat = false;
 
     message.guild.channels.cache.forEach(channel => {
 
         if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
-            sollicitatieBestaat = true;
+            reportBestaat = true;
 
-            message.reply("Je hebt al een Sollicitatie openstaan");
+            message.reply("Je hebt al een sollicitatie openstaan");
 
             return;
         }
 
     });
 
-    if (sollicitatieBestaat) return;
+    if (reportBestaat) return;
 
     var reportEmbed = new discord.MessageEmbed()
         .setTitle("Hallo " + message.author.username)
-        .setFooter("Je sollicitatie is aangemaakt!");
+        .setFooter("Bekijk wat je kan doen!");
 
     message.channel.send(reportEmbed);
 
@@ -64,8 +64,8 @@ module.exports.run = async (client, message, args) => {
                     });
 
                     var embedParent = new discord.MessageEmbed()
-                        .setTitle(`Hallo ${message.author.username}`)
-                        .setDescription("Vul dit bestand in voor een ticket https://forms.gle/1ezDKG1YJo8BBnBC8");
+                        .setTitle(`Hallo ${message.author.username} Vul het onderstaande bericht in!`)
+                        .setDescription("Doe !politie om voor Politie te solliciteren\nDoe !ambulance om voor Ambulance te solliciteren\nDoe !anwb om voor anwb te solliciteren");
 
                     settedParent.send(embedParent);
 

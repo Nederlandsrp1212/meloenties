@@ -2,32 +2,32 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    const categoryID = "749591852361187398";
+    const categoryID = "751092611401515058";
 
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
 
-    var intakeBestaat = false;
+    var sollicitatieBestaat = false;
 
     message.guild.channels.cache.forEach(channel => {
 
         if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
-            intakeBestaat = true;
+            sollicitatieBestaat = true;
 
-            message.reply("Je hebt al een intake");
+            message.reply("Je hebt al een Sollicitatie openstaan");
 
             return;
         }
 
     });
 
-    if (intakeBestaat) return;
+    if (sollicitatieBestaat) return;
 
-    var intakeEmbed = new discord.MessageEmbed()
+    var reportEmbed = new discord.MessageEmbed()
         .setTitle("Hallo " + message.author.username)
-        .setFooter("Kijk in intake kanaal om te alles in te vullen!");
+        .setFooter("Je sollicitatie is aangemaakt!");
 
-    message.channel.send(intakeEmbed);
+    message.channel.send(reportEmbed);
 
     message.guild.channels.create(userName.toLowerCase() + "-" + userDiscriminator, { type: 'text' }).then(
         (createdChannel) => {
@@ -64,8 +64,8 @@ module.exports.run = async (client, message, args) => {
                     });
 
                     var embedParent = new discord.MessageEmbed()
-                        .setTitle(`Hallo ${message.author.username} Vul het onderstaande bericht in!`)
-                        .setDescription("Naam(irl):\nVoor+Achternaam(IG):\nHeb je al nagedacht aan een baan in de stad, zoja welke dan?:\nHeb je familie in de stad:\nWat wordt je functie in de stad:");
+                        .setTitle(`Hallo ${message.author.username}`)
+                        .setDescription("Ik wil solliciteren voor:\nDiscord Naam+Tagg:\nNaam in-game:\nWat is je leeftijd(irl):\nHeb je al ervaring(Ja/Nee):Waarom wil je werken bij deze baan:\nWaarom moeten wij jou aannemen:\nWat zijn je sterke punten:\nWat zijn je zwakke punten:\n\n**Disclaimer**\n*Neem je ontslag of ben je ontslagen? Dan moet je één week wachten voordat je bij een andere whitelisted job kan solliciteren.*");
 
                     settedParent.send(embedParent);
 
@@ -79,5 +79,5 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "intake"
+    name: "politiesollicitatie"
 }
