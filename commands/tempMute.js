@@ -11,11 +11,19 @@ module.exports.run = async (client, message, args) => {
 
     if (!message.guild.me.hasPermission("OWNER")) return message.reply("Geen perms!");
 
+    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("Helaas kan jij dit niet doen!");
+
+    if (!args[0]) return message.reply("Geen gebruiker meegegeven!");
+
+    if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms!");
+
     var mutePerson = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
     if (!mutePerson) return message.reply("Gebruik niet gevonden!");
 
     if (mutePerson.hasPermission("OWNER")) return message.reply("Je kunt deze niet muten!");
+
+    if (mutePerson.hasPermission("KICK_MEMBERS")) return message.reply("Je kunt deze niet muten!");
 
     var muteRole = message.guild.roles.cache.get('749989325122437130');
     if (!muteRole) return message.channel.send("De rol muted bestaat niet!");
@@ -38,5 +46,5 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "intakerol"
+    name: "tempmute"
 }
