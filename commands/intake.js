@@ -64,7 +64,7 @@ module.exports.run = async (client, message, args) => {
                     });
 
                     var embedParent = new discord.MessageEmbed()
-                        .setTitle(`Hallo ${message.author.username} Vul het onderstaande bericht in!`)
+                        .setTitle(`Hallo ${message.author.username} vul het onderstaande bericht in!`)
                         .setDescription("Naam(irl):\nVoor+Achternaam(IG):\nHeb je al nagedacht aan een baan in de stad, zoja welke dan?:\nHeb je familie in de stad:\nWat wordt je functie in de stad:");
 
                     settedParent.send(embedParent);
