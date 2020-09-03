@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    const categoryID = "751092611401515058";
+    const categoryID = "751107506654281819";
 
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
         if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
             sollicitatieBestaat = true;
 
-            message.reply("Je hebt al een Sollicitatie openstaan");
+            message.reply("Je hebt al een politie sollicitatie openstaan");
 
             return;
         }
@@ -63,9 +63,45 @@ module.exports.run = async (client, message, args) => {
 
                     });
 
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'KorpsChef⭐⭐⭐'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+
+                    });
+
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'Korpsleiding⭐⭐'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+
+                    });
+
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'Hoofd-Commissaris⭐'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+
+                    });
+
                     var embedParent = new discord.MessageEmbed()
                         .setTitle(`Hallo ${message.author.username}`)
-                        .setDescription("Ik wil solliciteren voor:\nDiscord Naam+Tagg:\nNaam in-game:\nWat is je leeftijd(irl):\nHeb je al ervaring(Ja/Nee):Waarom wil je werken bij deze baan:\nWaarom moeten wij jou aannemen:\nWat zijn je sterke punten:\nWat zijn je zwakke punten:\n\n**Disclaimer**\n*Neem je ontslag of ben je ontslagen? Dan moet je één week wachten voordat je bij een andere whitelisted job kan solliciteren.*");
+                        .setDescription("\nDiscord Naam+Tagg:\nNaam in-game:\nWat is je leeftijd(irl):\nHeb je al ervaring(Ja/Nee):Waarom wil je werken bij deze baan:\nWaarom moeten wij jou aannemen:\nWat zijn je sterke punten:\nWat zijn je zwakke punten:\n\n**Disclaimer**\n*Neem je ontslag of ben je ontslagen? Dan moet je één week wachten voordat je bij een andere whitelisted job kan solliciteren.*");
 
                     settedParent.send(embedParent);
 
