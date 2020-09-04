@@ -9,17 +9,17 @@ module.exports.run = async (client, message, args) => {
 
     var politieBestaat = false;
 
-    message.guild.channels.cache.forEach(channel => {
+    //message.guild.channels.cache.forEach(channel => {
 
-        if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
-            politieBestaat = true;
+        //if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
+        //    politieBestaat = true;
 
-            message.reply("Je hebt al een politie sollicitatie openstaan");
+        //    message.reply("Je hebt al een politie sollicitatie openstaan");
 
-            return;
-        }
+        //    return;
+       //}
 
-    });
+    //});
 
     if (politieBestaat) return;
 
