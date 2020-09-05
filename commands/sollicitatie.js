@@ -4,14 +4,13 @@ module.exports.run = async (client, message, args) => {
 
     const categoryID = "751092611401515058";
 
-    var userName = message.author.username;
-    var userDiscriminator = message.author.discriminator;
+    var userName = message.author.nickName;
 
     var sollicitatieBestaat = false;
 
     message.guild.channels.cache.forEach(channel => {
 
-        if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
+        if (channel.name == nickName.toLowerCase() + "-") {
             sollicitatieBestaat = true;
 
             message.reply("Je hebt al een sollicitatie openstaan!");
@@ -24,12 +23,12 @@ module.exports.run = async (client, message, args) => {
     if (sollicitatieBestaat) return;
 
     var reportEmbed = new discord.MessageEmbed()
-        .setTitle("Hallo " + message.author.username)
+        .setTitle("Hallo " + message.author.nickname)
         .setFooter("Je sollicitatie is aangemaakt!");
 
     message.channel.send(reportEmbed);
 
-    message.guild.channels.create(userName.toLowerCase() + "-" + userDiscriminator, { type: 'text' }).then(
+    message.guild.channels.create(nickName.toLowerCase(), { type: 'text' }).then(
         (createdChannel) => {
             createdChannel.setParent(categoryID).then(
                 (settedParent) => {
