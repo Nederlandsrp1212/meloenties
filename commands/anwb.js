@@ -7,21 +7,21 @@ module.exports.run = async (client, message, args) => {
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
 
-    var ambulanceBestaat = false;
+    var anwbBestaat = false;
 
     //message.guild.channels.cache.forEach(channel => {
 
         //if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
-        //    ambulanceBestaat = true;
+        //    anwbBestaat = true;
 
-        //    message.reply("Je hebt al een ambulance sollicitatie openstaan");
+        //    message.reply("Je hebt al een anwb sollicitatie openstaan");
 
         //    return;
         //}
 
     //});
 
-    if (ambulanceBestaat) return;
+    if (anwbBestaat) return;
 
     var reportEmbed = new discord.MessageEmbed()
         .setTitle("Hallo " + message.author.username)
@@ -115,5 +115,5 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "ambulance"
+    name: "anwb"
 }
