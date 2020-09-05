@@ -7,21 +7,21 @@ module.exports.run = async (client, message, args) => {
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
 
-    var ambulanceBestaat = false;
+    var taxiBestaat = false;
 
     //message.guild.channels.cache.forEach(channel => {
 
         //if (channel.name == userName.toLowerCase() + "-" + userDiscriminator) {
-        //    ambulanceBestaat = true;
+        //    taxiBestaat = true;
 
-        //    message.reply("Je hebt al een ambulance sollicitatie openstaan");
+        //    message.reply("Je hebt al een taxi sollicitatie openstaan");
 
         //    return;
         //}
 
     //});
 
-    if (ambulanceBestaat) return;
+    if (taxiBestaat) return;
 
     var reportEmbed = new discord.MessageEmbed()
         .setTitle("Hallo " + message.author.username)
