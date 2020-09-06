@@ -34,13 +34,13 @@ client.on("guildMemberAdd", member => {
 
     var role = member.guild.roles.cache.get('745008192529891329');
 
-    if(!role) return
+    if (!role) return
 
     member.roles.add(role);
 
     var channel = member.guild.channels.cache.get('743812044121440297');
 
-    if(!channel) return;
+    if (!channel) return;
 
     channel.send(`Welkom bij de server ${member}`);
 
@@ -50,7 +50,26 @@ client.on("guildMemberAdd", member => {
 client.on("ready", async () => {
 
     console.log(`${client.user.username} is online.`);
-    client.user.setActivity("!help", { type: "PLAYING"});
+    client.user.setActivity("!help", { type: "PLAYING" });
+});
+
+client.on("messageDelete", messageDeleted => {
+
+    if (messageDeleted.author.bot) return;
+
+    var content = messageDeleted.content;
+    if (!content) content = "Geen tekst te vinden!";
+
+    var respone = `Bericht ${messageDeleted.id} is verwijderd uit ${messageDeleted.channel}\n **Bericht:** ${content}`;
+
+    var embed = new discord.MessageEmbed()
+        .setAuthor(`${messageDeleted.author.id} ${messageDeleted.author.tag}`, `${messageDeleted.author.avatarURL({ size: 4096 })}`)
+        .setDescription(respone)
+        .setTimestamp()
+        .setColor("#FF0000");
+
+    client.channels.cache.find(c => c.name == "🔰logs🔰").send(embed);
+
 });
 
 client.on("message", async message => {
@@ -65,7 +84,7 @@ client.on("message", async message => {
 
     var command = messageArray[0];
 
-    if(!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(prefix)) return;
 
     //command handler 
 
