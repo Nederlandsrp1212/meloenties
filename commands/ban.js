@@ -72,7 +72,7 @@ module.exports.run = async (client, message, args) => {
 
     })
 
-    var banChannel = message.member.guild.channels.cache.find(channel => channel.name === "🔰logs🔰");
+    var banChannel = message.member.guild.channels.cache.find(channel => channel.name === "logs");
     if (!banChannel) return message.reply("Kan het log kanaal niet vinden?");
 
 }

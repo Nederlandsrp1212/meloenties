@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
 
     if (intakePerson.hasPermission("MANAGE_MESSAGES")) return message.reply("Je kunt deze niet muten!");
 
-    var intakeRole = message.guild.roles.cache.get('743838009224593449');
+    var intakeRole = message.guild.roles.cache.get('752108920402608149');
     if (!intakeRole) return message.channel.send("De rol muted bestaat niet!");
 
     await (mutePerson.roles.add(muteRole.id));

@@ -43,7 +43,7 @@ module.exports.run = async (client, message, args) => {
     
     channel.send(announceEmbed);
 
-    var annoChannel = message.member.guild.channels.cache.find(channels => channel.name === "🔰logs🔰");
+    var annoChannel = message.member.guild.channels.cache.find(channels => channel.name === "logs");
     if (!annoChannel) return message.reply("Kan het log kanaal niet vinden?");
   
 } 

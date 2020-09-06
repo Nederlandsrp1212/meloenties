@@ -51,7 +51,7 @@ module.exports.run = async (client, message, args) => {
 
         var embed = new discord.MessageEmbed()
             .setColor("ff0000")
-            .setDescription("LAASTE WAARSCHUWING ANDERS MUTE!!");
+            .setDescription("**LAASTE WAARSCHUWING ANDERS KICK!!**");
 
         message.channel.send(embed);
 

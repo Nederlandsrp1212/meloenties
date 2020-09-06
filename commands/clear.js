@@ -28,7 +28,7 @@ module.exports.run = async (client, message, args) => {
         return message.reply("Geef een getal op!");
     }
 
-    var clearChannel = message.guild.channels.cache.find(channel => channel.name === "🔰logs🔰");
+    var clearChannel = message.guild.channels.cache.find(channel => channel.name === "logs");
     if (!clearChannel) return message.reply("Kan het log kanaal niet vinden?");
 
 }
