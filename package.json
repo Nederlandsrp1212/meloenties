@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "start": "npm start"
   },
   "keywords": [
     "bot",
@@ -16,10 +16,7 @@
   "dependencies": {
     "build": "^0.1.4",
     "discord.js": "^12.3.1",
-    "ffmpeg": "0.0.4",
-    "ms": "^2.1.2",
-    "sqlite3": "^5.0.0",
-    "ytdl-core": "^0.29.1"
+    "ms": "^2.1.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
