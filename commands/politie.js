@@ -101,7 +101,7 @@ module.exports.run = async (client, message, args) => {
 
                     var embedParent = new discord.MessageEmbed()
                         .setTitle(`Hallo ${message.author.username}`)
-                        .setDescription("\nDiscord Naam+Tagg:\nDiscord Naam+Tagg:\nWat is je leeftijd(irl):\nHeb je al ervaring(Ja/Nee):\nWaarom wil je werken bij deze baan:\nWaarom moeten wij jou aannemen:\nWat zijn je sterke punten:\nWat zijn je zwakke punten:\n\n**Disclaimer**\n*Neem je ontslag of ben je ontslagen? Dan moet je één week wachten voordat je bij een andere whitelisted job kan solliciteren.*");
+                        .setDescription("\nDiscord Naam+Tagg:\nWat is je leeftijd(irl):\nHeb je al ervaring(Ja/Nee):\nWaarom wil je werken bij deze baan:\nWaarom moeten wij jou aannemen:\nWat zijn je sterke punten:\nWat zijn je zwakke punten:\n\n**Disclaimer**\n*Neem je ontslag of ben je ontslagen? Dan moet je één week wachten voordat je bij een andere whitelisted job kan solliciteren.*");
 
                     settedParent.send(embedParent);
 
