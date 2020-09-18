@@ -65,7 +65,7 @@ module.exports.run = async (client, message, args) => {
 
                     var embedParent = new discord.MessageEmbed()
                         .setTitle(`Hallo ${message.author.username}`)
-                        .setDescription("\nWIl je solliciteren voor politie doe dan !politie\nWil je voor ambulance doe dan !ambulance\nWil je voor anwb doe dan !anwb\n\n**Disclaimer**\n*Neem je ontslag of ben je ontslagen? Dan moet je één week wachten voordat je bij een andere whitelisted job kan solliciteren.*");
+                        .setDescription("\nWIl je solliciteren voor politie doe dan !politie\nWil je voor ambulance doe dan !ambulance\nWil je voor anwb doe dan !anwb\nWil je voor taxi doe dan !taxi\n\n**Disclaimer**\n*Neem je ontslag of ben je ontslagen? Dan moet je één week wachten voordat je bij een andere whitelisted job kan solliciteren.*");
 
                     settedParent.send(embedParent);
 
