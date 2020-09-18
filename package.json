@@ -1,24 +1,24 @@
 {
-    "name": "mercs",
-    "version": "1.0.0",
-    "description": "Bot voor de youtuber",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "nodemon"
-    },
-    "keywords": [
-      "bot",
-      "command"
-    ],
-    "author": "Lucas Hirsch",
-    "license": "ISC",
-    "dependencies": {
-      "build": "^0.1.4",
-      "discord.js": "^12.3.1",
-      "ms": "^2.1.2"
-    },
-    "devDependencies": {
-      "nodemon": "^2.0.4"
-    }
+  "name": "mercs",
+  "version": "1.0.0",
+  "description": "Bot voor de youtuber",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "keywords": [
+    "bot",
+    "command"
+  ],
+  "author": "Lucas Hirsch",
+  "license": "ISC",
+  "dependencies": {
+    "build": "^0.1.4",
+    "discord.js": "^12.3.1",
+    "ms": "^2.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
+}
