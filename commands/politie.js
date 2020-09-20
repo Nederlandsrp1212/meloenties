@@ -51,7 +51,7 @@ module.exports.run = async (client, message, args) => {
 
                     });
 
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '🔰Staff🔰'), {
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '🔰 | Staff'), {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
                         SEND_MESSAGES: true,
@@ -63,7 +63,7 @@ module.exports.run = async (client, message, args) => {
 
                     });
 
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'KorpsChef⭐⭐⭐'), {
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '⭐⭐⭐ | Eerste Hoofd Commissaris'), {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
                         SEND_MESSAGES: true,
@@ -75,7 +75,7 @@ module.exports.run = async (client, message, args) => {
                     
                     });
                     
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'Korpsleiding⭐⭐'), {
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '⭐⭐ | Hoofd-Commissaris'), {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
                         SEND_MESSAGES: true,
@@ -87,7 +87,7 @@ module.exports.run = async (client, message, args) => {
                     
                     });
                     
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === 'Hoofd-Commissaris⭐'), {
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '⭐ | Commissaris'), {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
                         SEND_MESSAGES: true,
