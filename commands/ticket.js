@@ -51,7 +51,7 @@ module.exports.run = async (client, message, args) => {
 
                     });
 
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '🔰Managment🔰'), {
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '👨🏽‍🏫 | Hoofd-Management'), {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
                         SEND_MESSAGES: true,
@@ -63,7 +63,55 @@ module.exports.run = async (client, message, args) => {
 
                     });
 
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '🔰Hoofd-Managment🔰'), {
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '👨🏽‍🏫 | Management'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+
+                    });
+
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '👑 | Ticket Beheerder'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+
+                    });
+
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '👨🏽‍🏫 | Management'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+
+                    });
+
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '🕵🏽‍♂️ | Douane'), {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
+
+                    });
+
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '🔰 | Support Team'), {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
                         SEND_MESSAGES: true,
