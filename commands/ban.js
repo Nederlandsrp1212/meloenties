@@ -85,10 +85,6 @@ async function promptMessage(message, author, time, reactions) {
 
 }
 
-var banChannel = message.member.guild.channels.cache.find(channel => channel.name === "logs");
-    if (!banChannel) return message.reply("Kan het log kanaal niet vinden?");
-
-
 module.exports.help = {
     name: "ban"
 }
