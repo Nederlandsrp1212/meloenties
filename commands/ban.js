@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
 
     message.channel.send(embedPrompt).then(async msg => {
 
-        var emoji = await promptMessage(message, message.author, 30, ["✔", "❌"]);
+        var emoji = await promptMessage(msg, message.author, 30, ["✔", "❌"]);
 
         if (emoji == "✔") {
 
@@ -69,9 +69,6 @@ module.exports.run = async (client, message, args) => {
 
     })
 
-    var banChannel = message.member.guild.channels.cache.find(channel => channel.name === "logs");
-    if (!banChannel) return message.reply("Kan het log kanaal niet vinden?");
-
 }
 
 async function promptMessage(message, author, time, reactions) {
@@ -87,6 +84,9 @@ async function promptMessage(message, author, time, reactions) {
     return message.awaitReactions(filter, { max: 1, time: time }).then(collected => collected.first() && collected.first().emoji.name);
 
 }
+
+var banChannel = message.member.guild.channels.cache.find(channel => channel.name === "logs");
+    if (!banChannel) return message.reply("Kan het log kanaal niet vinden?");
 
 
 module.exports.help = {
