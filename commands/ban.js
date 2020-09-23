@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
 
     message.channel.send(embedPrompt).then(async msg => {
 
-        var emoji = await promptMessage(msg, message.author, 30, ["✔", "❌"]);
+        var emoji = await promptMessage(message, message.author, 30, ["✔", "❌"]);
 
         if (emoji == "✔") {
 
