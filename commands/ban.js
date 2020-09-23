@@ -31,9 +31,6 @@ module.exports.run = async (client, message, args) => {
             **Verbannen door:** ${message.author}
             **Reden** ${reason}`);
 
-    var banChannel = message.member.guild.channels.cache.find(channel => channel.name === "log");
-    if (!banChannel) return message.reply("Kan het log kanaal niet vinden?");
-
     message.channel.send(embedPrompt).then(async msg => {
 
         var emoji = await promptMessage(msg, message.author, 30, ["✔", "❌"]);
@@ -56,19 +53,19 @@ module.exports.run = async (client, message, args) => {
 
         }
 
-        message.channel.awaitMessages(m => m.author.id === message.author.id, { max: 1, time: 30000 }).then(collected => {
+        // message.channel.awaitMessages(m => m.author.id === message.author.id, { max: 1, time: 30000 }).then(collected => {
 
-         if (collected.first().content.toLowerCase() == "ja") {
+        //  if (collected.first().content.toLowerCase() == "ja") {
 
-           kickUser.kick(reason).catch(err => {
-               if (err) return message.reply("Er is iets mis gegaan?!")
-            });
+        //    kickUser.kick(reason).catch(err => {
+        //        if (err) return message.reply("Er is iets mis gegaan?!")
+        //     });
 
-          }else {
-              message.reply("Geannuleerd")
-          }
+        //   }else {
+        //       message.reply("Geannuleerd")
+        //   }
 
-        });
+        // });
 
     })
 
