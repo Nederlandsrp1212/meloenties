@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
 
     var banUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
-    var reason = args.slice(1).join(" ");
+    var reason = args.slice(0).join(" ");
 
     if (!banUser) return message.reply("Gebruik niet gevonden!");
 
