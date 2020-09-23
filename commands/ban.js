@@ -4,9 +4,9 @@ module.exports.run = async (client, message, args) => {
 
     // !ban @spelernaam redenen
 
-    if (!message.member.hasPermission("OWNER")) return message.reply("Helaas kan jij dit niet doen!");
+    if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Helaas kan jij dit niet doen!");
 
-    if (!message.guild.me.hasPermission("OWNER")) return message.reply("Geen perms!");
+    if (!message.guild.me.hasPermission("ADMINISTRATOR")) return message.reply("Geen perms!");
 
     if (!args[0]) return message.reply("Geen gebruiker meegegeven!");
 
