@@ -4,17 +4,17 @@ module.exports.run = async (client, message, args) => {
 
     // !ban @spelernaam redenen
 
-    if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply("Helaas kan jij dit niet doen!");
+    if (!message.member.hasPermission("OWNER")) return message.reply("Helaas kan jij dit niet doen!");
 
-    if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.reply("Geen perms!");
+    if (!message.guild.me.hasPermission("OWNER")) return message.reply("Geen perms!");
 
-    if (!args[1]) return message.reply("Geen gebruiker meegegeven!");
+    if (!args[0]) return message.reply("Geen gebruiker meegegeven!");
 
-    if (!args[2]) return message.reply("Geen redenen meegegeven");
+    if (!args[1]) return message.reply("Geen redenen meegegeven");
 
-    var banUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[2]));
+    var banUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
-    var reason = args.slice(2).join(" ");
+    var reason = args.slice(1).join(" ");
 
     if (!banUser) return message.reply("Gebruik niet gevonden!");
 

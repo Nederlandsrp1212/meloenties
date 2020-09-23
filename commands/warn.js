@@ -6,13 +6,13 @@ module.exports.run = async (client, message, args) => {
 
     // !warn spelerNaam redenen hier.
 
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Helaas kan jij dit niet doen!");
+    if (!message.member.hasPermission("OWNER")) return message.reply("Helaas kan jij dit niet doen!");
 
     if (!args[0]) return message.reply("Geen gebruiker meegegeven!");
 
     if (!args[1]) return message.reply("Geen redenen meegegeven");
 
-    if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.reply("Geen perms!");
+    if (!message.guild.me.hasPermission("OWNER")) return message.reply("Geen perms!");
 
     var warnUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
 
     if (!warnUser) return message.reply("Gebruik niet gevonden!");
 
-    if (warnUser.hasPermission("MANAGE_MESSAGES")) return message.reply("Je kunt deze niet warnen!");
+    if (warnUser.hasPermission("OWNER")) return message.reply("Je kunt deze niet warnen!");
 
     if (!warns[warnUser.id]) warns[warnUser.id] = {
         warns: 0
@@ -47,7 +47,7 @@ module.exports.run = async (client, message, args) => {
 
     channel.send(embed);
 
-    if (warns[warnUser.id].warns == 4) {
+    if (warns[warnUser.id].warns == 2) {
 
         var embed = new discord.MessageEmbed()
             .setColor("ff0000")
@@ -55,7 +55,7 @@ module.exports.run = async (client, message, args) => {
 
         message.channel.send(embed);
 
-    } else if (warns[warnUser.id].warns == 5) {
+    } else if (warns[warnUser.id].warns == 3) {
        message.guild.member(warnUser).kick(reason);
        message.channel.send(`${warnUser} is gekickd door de bot wegens te veel warns!`);
     }
