@@ -33,9 +33,9 @@ module.exports.run = async (client, message, args) => {
 
     message.channel.send(embedPrompt).then(async msg => {
 
-        var emoji = await promptMessage(msg, message.author, 30, ["✔", "❌"]);
+        var emoji = await promptMessage(msg, message.author, 30, ["✅", "❌"]);
 
-        if (emoji == "✔") {
+        if (emoji == "✅") {
 
             msg.delete();
 
@@ -53,19 +53,19 @@ module.exports.run = async (client, message, args) => {
 
         }
 
-        message.channel.awaitMessages(m => m.author.id === message.author.id, { max: 1, time: 30000 }).then(collected => {
+        // message.channel.awaitMessages(m => m.author.id === message.author.id, { max: 1, time: 30000 }).then(collected => {
 
-         if (collected.first().content.toLowerCase() == "ja") {
+        //  if (collected.first().content.toLowerCase() == "ja") {
 
-           kickUser.kick(reason).catch(err => {
-               if (err) return message.reply("Er is iets mis gegaan?!")
-            });
+        //    kickUser.kick(reason).catch(err => {
+        //        if (err) return message.reply("Er is iets mis gegaan?!")
+        //     });
 
-          }else {
-              message.reply("Geannuleerd")
-          }
+        //   }else {
+        //       message.reply("Geannuleerd")
+        //   }
 
-        });
+        // });
 
     })
 
@@ -79,7 +79,7 @@ async function promptMessage(message, author, time, reactions) {
         await message.react(reaction);
     }
 
-    var filter = (reaction, user) => reaction.includes(reactions.emoji.name && user.id === author.id);
+    var filter = (reaction, user) => reactions.includes(reaction.emoji.name) && user.id === author.id;
 
     return message.awaitReactions(filter, { max: 1, time: time }).then(collected => collected.first() && collected.first().emoji.name);
 
