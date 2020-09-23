@@ -39,7 +39,7 @@ module.exports.run = async (client, message, args) => {
 
             msg.delete();
 
-            banUser.ban(reason).catch(err => {
+            banUser.kick(reason).catch(err => {
                 if (err) return message.reply("Er is iets mis gegaan!");
             });
 
