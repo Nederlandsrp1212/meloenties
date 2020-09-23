@@ -6,13 +6,13 @@ module.exports.run = async (client, message, args) => {
 
     // !warn spelerNaam redenen hier.
 
-    if (!message.member.hasPermission("OWNER")) return message.reply("Helaas kan jij dit niet doen!");
+    if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Helaas kan jij dit niet doen!");
 
     if (!args[0]) return message.reply("Geen gebruiker meegegeven!");
 
     if (!args[1]) return message.reply("Geen redenen meegegeven");
 
-    if (!message.guild.me.hasPermission("OWNER")) return message.reply("Geen perms!");
+    if (!message.guild.me.hasPermission("ADMINISTRATOR")) return message.reply("Geen perms!");
 
     var warnUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
 
     if (!warnUser) return message.reply("Gebruik niet gevonden!");
 
-    if (warnUser.hasPermission("OWNER")) return message.reply("Je kunt deze niet warnen!");
+    if (warnUser.hasPermission("ADMINISTRATOR")) return message.reply("Je kunt deze niet warnen!");
 
     if (!warns[warnUser.id]) warns[warnUser.id] = {
         warns: 0
