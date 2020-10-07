@@ -35,7 +35,7 @@ module.exports.run = async (client, message, args) => {
 
         } else if (result == "steen") {
 
-            return message.channel.send(`Ik heb ${result} :moyai:, Jij wint`);
+            return message.channel.send(`Ik heb ${result} :rock:, Jij wint`);
 
         } else if (result == "papier") {
 
