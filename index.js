@@ -32,7 +32,7 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on("guildMemberAdd", member => {
 
-    var role = member.guild.roles.cache.get('745008192529891329');
+    var role = member.guild.roles.cache.get('743808908791119912');
 
     if (!role) return
 
@@ -42,10 +42,9 @@ client.on("guildMemberAdd", member => {
 
     if (!channel) return;
 
-    channel.send(`Welkom bij de server ${member}`);
+    channel.send(`Welkom in de stad ${member} wij wensen u een fijn leven toe!`);
 
 })
-
 
 client.on("ready", async () => {
 
