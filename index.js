@@ -126,7 +126,7 @@ function RandomXP(message) {
 
         fs.writeFile("./data/level.json", JSON.stringify(levelFile), err => {
             if (err) console.log(err);
-        })
+        });
 
     }
 
