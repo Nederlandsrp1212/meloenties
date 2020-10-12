@@ -6,6 +6,12 @@ module.exports.run = async (client, message, args) => {
         .setColor("0000ff")
         .setTitle("**Help**")
         .addFields(
+            { name: "**!ambulance**", value: "Maak een sollicitatie aan voor Ambulance!"},
+            { name: "**!announce**", value: "Maak een announce aan!"},
+            { name: "**!anwb**", value: "Maak een sollicitatie aan voor ANWB"},
+            { name: "**!giveaway**", value: "**WORD AAN GEWERKT EN KAN ALLEEN STAFF**"},
+            { name: "**!giveaway**", value: "**WORD AAN GEWERKT EN KAN ALLEEN STAFF**"},
+            { name: "**!giveaway**", value: "**WORD AAN GEWERKT EN KAN ALLEEN STAFF**"},
             { name: "**!giveaway**", value: "**WORD AAN GEWERKT EN KAN ALLEEN STAFF**"},
             { name: "**!hallo**", value: "Praat met De discord bot gaat."},
             { name: "**!hgh**", value: "Vraag hoe het gaat aan De discord bot gaat."},
