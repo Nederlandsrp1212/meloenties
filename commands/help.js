@@ -7,7 +7,6 @@ module.exports.run = async (client, message, args) => {
         .setTitle("**Help**")
         .addFields(
             { name: "**!ambulance**", value: "Maak een sollicitatie aan voor Ambulance!"},
-            { name: "**!announce**", value: "Maak een announce aan!"},
             { name: "**!anwb**", value: "Maak een sollicitatie aan voor ANWB"},
             { name: "**!giveaway**", value: "**WORD AAN GEWERKT EN KAN ALLEEN STAFF**"},
             { name: "**!giveaway**", value: "**WORD AAN GEWERKT EN KAN ALLEEN STAFF**"},
