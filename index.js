@@ -39,7 +39,7 @@ client.on("guildMemberAdd", member => {
 
     member.roles.add(role);
 
-    var channel = member.guild.channels.cache.get('743812044121440297');
+    var channel = member.guild.channels.cache.get('768570810730151968');
 
     if (!channel) return;
 
