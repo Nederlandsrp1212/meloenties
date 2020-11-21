@@ -131,5 +131,3 @@ function RandomXP(message) {
     }
 
 }
-
-bot.login(botConfig.token);
