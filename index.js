@@ -132,4 +132,4 @@ function RandomXP(message) {
 
 }
 
-bot.login(process.env.token);
+bot.login(botConfig.token);
