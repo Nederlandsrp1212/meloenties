@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.delete();
 
     } else {
-        message.channel.send("Gelieve dit commando te doen bij een intake!");
+        message.channel.send("Gelieveasd dit commando te doen bij een intake!");
     }
 
     var reportChannel = message.member.guild.channels.cache.find(channel => channel.name === "logs");
